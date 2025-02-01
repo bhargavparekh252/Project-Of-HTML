@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
+    <!-- Title of the webpage -->
+    <title>Incredible India</title>
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Welcome to Incredible India</h1>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:3000/Web_Designing_Project/HOME_PAGE.html" target="_self">Home</a></li>
+            <li><a href="http://127.0.0.1:3000/Web_Designing_Project/CULTURE_PAGE.html"
+                    target="_self"><i>Culture</i></a></li>
+            <li><a href="http://127.0.0.1:3000/Web_Designing_Project/LANDMARKS_PAGE.html" target="_self">Landmarks</a>
+            </li>
+            <li><a href="http://127.0.0.1:3000/Web_Designing_Project/CUISINE_PAGE.html" target="_self">Cuisine</a></li>
+            <li><a href="http://127.0.0.1:3000/Web_Designing_Project/CONTACT_US_PAGE.html" target="_self">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <main>
+        <!-- Section for contact form -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>Please fill out the form below for any inquiries or to register as a student.</p>
+
+            <form>
+                <h2>Student Registartion Form</h2>
+                <table>
+                    <!-- First Name input -->
+                    <tr>
+                        <td><label for="FIRST_NAME">First Name:</label></td>
+                        <td><input type="text" id="FIRST_NAME" name="first_name" placeholder="Your Name Here"></td>
+                    </tr>
+                    <!-- Password input -->
+                    <tr>
+                        <td><label for="PASSWORD">Password:</label></td>
+                        <td><input type="password" id="PASSWORD" name="password" required
+                                placeholder="Your Password Here"></td>
+                    </tr>
+                    <!-- Gender selection -->
+                    <tr>
+                        <td><label for="GENDER">Gender:</label></td>
+                        <td>
+                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="female"> Female
+                        </td>
+                    </tr>
+                    <!-- Newsletter subscription -->
+                    <tr>
+                        <td colspan="2">
+                            <label>Subscribe To Newsletter:<input type="checkbox" name="subscribe_newsletter"></label>
+                        </td>
+                    </tr>
+                    <!-- State selection -->
+                    <tr>
+                        <td><label for="STATE">State:</label></td>
+                        <td>
+                            <select id="STATE" name="state">
+                                <option value="">Please Select Your State</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Telangana">Telangana</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- Resume upload -->
+                    <tr>
+                        <td><label for="UPLOAD_RESUME">Upload Resume:</label></td>
+                        <td><input type="file" id="UPLOAD_RESUME" name="upload_resume"></td>
+                    </tr>
+                    <!-- Address input -->
+                    <tr>
+                        <td><label for="ADDRESS">Address:</label></td>
+                        <td><textarea id="ADDRESS" name="address" rows="4"
+                                placeholder="Enter Full Address Here"></textarea></td>
+                    </tr>
+                    <!-- Date of Birth input -->
+                    <tr>
+                        <td><label for="DOB">Date Of Birth:</label></td>
+                        <td><input type="date" id="DOB" name="dob"></td>
+                    </tr>
+                    <!-- Preferred Interview Time input -->
+                    <tr>
+                        <td><label for="TIME">Preferred Interview Time:</label></td>
+                        <td><input type="time" id="TIME" name="interview_time"></td>
+                    </tr>
+                    <!-- Marks input -->
+                    <tr>
+                        <td><label for="MARKS">Marks:</label></td>
+                        <td><input type="number" id="MARKS" name="marks"></td>
+                    </tr>
+                    <!-- Form actions -->
+                    <tr>
+                        <td><input type="submit"></td>
+                        <td><input type="reset"></td>
+                    </tr>
+                </table>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Additional information section -->
+        <aside>
+            <h2>More Information</h2>
+            <p>Explore government job opportunities on the official OJAS website:</p>
+            <iframe src="https://ojas.gujarat.gov.in/" width="400" height="400"></iframe>
+            <p>Contact us at <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
+        </aside>
+
+        <!-- Back to Home link -->
+        <p><a href="http://127.0.0.1:3000/Web_Designing_Project/HOME_PAGE.html" target="_self">&#8592 Back to Home</a></p>
+    </main>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        &copy;2025 Incredible India Project.</p>
+    </footer>
+
+</body>
+
+</html>
