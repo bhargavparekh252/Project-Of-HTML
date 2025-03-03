@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon"
-        href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
+    <link rel="icon" type="image/x-icon" href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
     <title>Incredible India</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -104,6 +103,7 @@
     figure {
         margin: 20px 0;
         text-align: center;
+        overflow: hidden; /* Prevents overflow of enlarged image */
     }
 
     figure img {
@@ -111,6 +111,12 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    /* Hover Effect on Images */
+    figure img:hover {
+        transform: scale(1.1); /* Increases image size by 10% */
     }
 
     figcaption {
@@ -133,7 +139,77 @@
     footer a:hover {
         text-decoration: underline;
     }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 768px) {
+        /* For screens smaller than 768px */
+        .Navigation nav {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        .Navigation nav li {
+            margin: 10px 0;
+        }
+
+        .Navigation nav li a {
+            font-size: 1rem;
+            padding: 12px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        table, th, td {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+
+        figure img {
+            width: 80%; /* Ensure images do not stretch */
+            height: auto;
+        }
+
+        footer {
+            padding: 15px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* For screens smaller than 480px (e.g., mobile phones) */
+        .Navigation nav li a {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        table, th, td {
+            font-size: 0.8rem;
+            padding: 6px;
+        }
+
+        figure img {
+            width: 100%; /* Make images scale properly */
+        }
+
+        footer {
+            padding: 10px 0;
+        }
+    }
 </style>
+
 <body>
     <!-- Navigation menu -->
     <div class="Navigation">
@@ -156,8 +232,7 @@
             <!-- Article about festivals -->
             <article>
                 <h3>Festivals</h3>
-                <p>India celebrates a variety of festivals that reflect its rich cultural heritage and religious
-                    diversity:</p>
+                <p>India celebrates a variety of festivals that reflect its rich cultural heritage and religious diversity:</p>
                 <ul>
                     <li><b>Diwali:</b> Festivals of Lights, symbolizing the victory of light over darkness.</li>
                     <li><b>Holi:</b> Festivals of Colours, celebrating love and the arrival of spring.</li>
@@ -165,19 +240,15 @@
                     <li><b>Christmas:</b> Festival of Joy, celebrating the birth of Jesus Christ.</li>
                 </ul>
                 <figure>
-                    <img src="https://www.indiainputs.com/wp-content/uploads/2024/05/Diwali.webp" title="Diwali"
-                        alt="Diwali" width="300" height="200">
+                    <img src="https://www.indiainputs.com/wp-content/uploads/2024/05/Diwali.webp" title="Diwali" alt="Diwali" width="300" height="200">
                     <figcaption>Diwali, the festival of light.</figcaption>
                 </figure>
             </article>
 
             <!-- Section for languages -->
             <h2>Languages</h2>
-            <p>India is a linguistic treasure trove with 22 officially recognized languages and thousands of regional
-                dialects:</p>
+            <p>India is a linguistic treasure trove with 22 officially recognized languages and thousands of regional dialects:</p>
             <table border="1px" cellspacing="0">
-
-                <head><b>Popular Languages In India</b></head>
                 <thead>
                     <tr>
                         <th>Language</th>
@@ -207,8 +278,7 @@
             <!-- Fun Fact -->
             <details>
                 <summary>Fun Fact</summary>
-                <p>India has the largest postal network in the world, with over 1,50,000 post offices, including one
-                    located on a structure in Dal Lake, Srinagar.</p>
+                <p>India has the largest postal network in the world, with over 1,50,000 post offices, including one located on a structure in Dal Lake, Srinagar.</p>
             </details>
 
             <!-- Section for traditional attire -->
@@ -222,8 +292,7 @@
                     <li><b>Dhoti:</b> Traditional men's wear in southern and eastern India.</li>
                 </ul>
                 <figure>
-                    <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_500x286/public/2024/11/18/1583898-istockphoto-849698772-612x612-1.jpg"
-                        title="Indian Saree" alt="Indian Saree" width="300" height="200">
+                    <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_500x286/public/2024/11/18/1583898-istockphoto-849698772-612x612-1.jpg" title="Indian Saree" alt="Indian Saree" width="300" height="200">
                     <figcaption>Traditional Saree - Grace and Elegance</figcaption>
                 </figure>
             </section>
