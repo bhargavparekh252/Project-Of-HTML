@@ -10,39 +10,52 @@
 </head>
 <style>
     body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
+           font-family: 'Poppins', sans-serif;
+           background-color: #f4f4f4;
+           margin: 0;
+           padding: 0;
+           overflow-x: hidden;
     }
 
+    /* Navigation Bar */
     .Navigation {
-        background-color: #333;
-        overflow: hidden;
+            background-color: #333;
+            overflow: hidden;
     }
 
     .Navigation nav {
-        display: flex;
-        justify-content: center;
-        padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
     }
 
     .Navigation nav li {
-        list-style-type: none;
-        margin: 0 15px;
-        display: inline-block;
+            list-style-type: none;
+            margin: 0 15px;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInNav 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeInNav {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
     }
 
     .Navigation nav li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-        padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
     }
 
     .Navigation nav li a:hover {
-        background-color: #f0a500;
-        border-radius: 5px;
+            background-color: #f0a500;
+            border-radius: 5px;
+            transform: scale(1.1);
     }
 
     main {
@@ -59,7 +72,7 @@
         color: #444;
     }
 
-    p {
+    p, ul{
         font-size: 1rem;
         line-height: 1.6;
         color: #555;
@@ -67,7 +80,35 @@
 
     section {
         margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideIn 1s ease-in-out forwards;
     }
+
+    @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 2.5rem;
+            border-right: 4px solid black;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
 
     ul {
         padding-left: 20px;
@@ -82,7 +123,15 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: fadeInScale 1s ease-in-out forwards;
     }
+
+    @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
 
     table, th, td {
         border: 1px solid #ddd;
@@ -101,22 +150,22 @@
     }
 
     figure {
-        margin: 20px 0;
+        /* margin: 20px 0; */
         text-align: center;
-        overflow: hidden; /* Prevents overflow of enlarged image */
+        /* overflow: hidden; Prevents overflow of enlarged image */
     }
 
     figure img {
         max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease; /* Smooth transition */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     /* Hover Effect on Images */
     figure img:hover {
         transform: scale(1.1); /* Increases image size by 10% */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     figcaption {
@@ -126,10 +175,21 @@
 
     footer {
         background-color: #333;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-in-out forwards;
     }
+
+    @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
     footer a {
         color: #f0a500;
