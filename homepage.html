@@ -6,207 +6,413 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
     <title>Incredible India</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #282c34;
-            animation: fadeInDown 1s ease-in-out;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 2.5rem;
+            border-right: 4px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Shimmering Effect for Important Text */
+        mark {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+            background-size: 200% 200%;
+            animation: shimmer 2s infinite alternate;
+            padding: 2px 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            animation: slideDown 1.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.4s ease-in-out;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        header nav ul li a:hover,
+        footer a:hover {
+            color: #f0a500; /* Change color on hover */
+            text-decoration: underline; /* Underline the text on hover */
+            background-color: #450d0d; /* Optional: Add a background color */
+            padding: 5px 10px; /* Optional: Add padding for a button-like effect */
+            border-radius: 5px; /* Optional: Round the corners */
+            transition: all 0.3s ease; /* Smooth transition effect */
+        }
+
+        main {
+            padding: 20px;
+            background-color: white;
+        }
+
+        section {
+            margin-bottom: 30px;
+            transform: translateY(50px);
+            animation: slideIn 1s ease-in-out forwards;
+            margin-bottom: 30px;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            transform: scale(0.8);
+            opacity: 0;
+            animation: zoomIn 1s ease-in-out forwards;
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        section p, section ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: center;
+        }
+
+        section figure {
+            margin: 10px 0;
+            text-align: center;
+            overflow: hidden; /* Prevents the image from overflowing */
+             position: relative; 
+        }
+
+        section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: floatUp 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Button Hover Effect */
+        button {
+            background-color: #f0a500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            animation: bounce 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+
+        /* Hover Effect on Images */
+        section img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         footer {
             background-color: #282c34;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        /* Header Title Animation */
-        .display-4 {
-            animation: slideInLeft 1.5s ease-out;
-        }
-
-        /* Navigation Link Hover Animation Retained */
-        nav ul li a:hover,
-        footer a:hover {
-            color: #f0a500;
-            text-decoration: underline;
-            background-color: #450d0d;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        /* Section Animation */
-        section {
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-        }
-
-        /* Staggered Animation for Sections */
-        section:nth-child(1) { animation-delay: 0.2s; }
-        section:nth-child(2) { animation-delay: 0.4s; }
-        section:nth-child(3) { animation-delay: 0.6s; }
-        section:nth-child(4) { animation-delay: 0.8s; }
-        section:nth-child(5) { animation-delay: 1s; }
-
-        /* Image Animation */
-        section img {
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            animation: zoomIn 1s ease-out;
-        }
-
-        section img:hover {
-            transform: scale(1.1);
-        }
-
-        figure {
-            overflow: hidden;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
             position: relative;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-in-out forwards;
         }
 
-        /* Keyframe Animations */
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-50px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(50px); }
-            100% { opacity: 1; transform: translateY( RSquo); }
+        footer a {
+            color: #f0a500;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
         }
 
-        @keyframes slideInLeft {
-            0% { opacity: 0; transform: translateX(-100px); }
-            100% { opacity: 1; transform: translateX(0); }
+        footer a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        footer address {
+            font-style: normal;
+            margin-bottom: 15px;
         }
 
-        @keyframes zoomIn {
-            0% { opacity: 0; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1); }
+        footer img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* Media Queries for Responsiveness */
+        /* For devices with width 768px or less (e.g., tablets, smaller laptops) */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section img {
+                width: 100%;
+                height: auto;
+            }
+
+            footer img {
+                width: 20px;
+                height: 15px;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            footer a {
+                font-size: 1rem;
+            }
+        }
+
+        /* For devices with width 480px or less (e.g., smartphones) */
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 8px 0;
+            }
+
+            section h2 {
+                font-size: 1.3rem;
+            }
+
+            section img {
+                width: 100%;
+                height: auto;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            footer a {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- Header Section -->
-    <header class="text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Welcome To <mark>Incredible India</mark></h1>
-            <p class="lead fw-bold">Discover The Diversity, Beauty, And The Rich Heritage Of India!</p>
-            <nav>
-                <ul class="nav justify-content-center">
-                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="./homepage.html" target="_self">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="./culturepage.html" target="_self"><i>Culture</i></a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="./landmarks.html" target="_self">Landmarks</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="./cuisine.html" target="_self">Cuisine</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-bold" href="./contactus.html" target="_self">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>Welcome To <mark>Incredible India</mark></h1>
+        <p><b>Discover The Diversity, Beauty, And The Rich Heritage Of India!</b></p>
+        <nav>
+            <ul>
+                <li><a href="./homepage.html" target="_self">Home</a></li>
+                <li><a href="./culturepage.html" target="_self"><i>Culture</i></a></li>
+                <li><a href="./landmarks.html" target="_self">Landmarks</a></li>
+                <li><a href="./cuisine.html" target="_self">Cuisine</a></li>
+                <li><a href="./contactus.html" target="_self">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
-
+    
     <!-- Main Content -->
-    <main class="container py-4 bg-white">
+    <main>
         <!-- About India Section -->
-        <section class="mb-5">
-            <h2 class="display-5 text-dark">About India</h2>
-            <p class="fs-5 text-muted">India is a land of incredible diversity. From the snow-capped peaks of the <i>Himalayas</i> to the serene backwaters of Kerala, every corner of India tells a unique story. India is the <b>second-most populous country</b> in the world and boasts a history spanning thousands of years. Its rich traditions have left an indelible mark on the world.</p>
-            <figure class="text-center">
-                <img src="https://t4.ftcdn.net/jpg/01/14/62/33/360_F_114623372_ZUIjiBqg3GGiTkkvFzAk4GJ0zpqliJE7.jpg" title="INDIA" alt="Map of India" class="img-fluid">
-                <figcaption>India: A land of cultural and geographical diversity.</figcaption>
+        <section>
+            <h2>About India</h2>
+            <p>India is a land of incredible diversity. From the snow-capped peaks of the <i>Himalayas</i> to the serene backwaters of Kerala, every corner of India tells a unique story. India is the <b>second-most populous country</b> in the world and boasts a history spanning thousands of years. Its rich traditions have left an indelible mark on the world.</p>
+            <figure>
+                <img src="https://t4.ftcdn.net/jpg/01/14/62/33/360_F_114623372_ZUIjiBqg3GGiTkkvFzAk4GJ0zpqliJE7.jpg" title="INDIA" alt="Map of India" width="300" height="200"> 
             </figure>
-            <p class="text-center fs-5 text-muted">"Unity in diversity is not just a slogan in India but a way of life."</p>
+            <p>India: A land of cultural and geographical diversity.</p>
+            <p>"Unity in diversity is not just a slogan in India but a way of life."</p>
         </section>
 
         <!-- Highlights Section -->
-        <section class="mb-5">
-            <h5 class="fw-bold">Highlights of India Include</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-muted"><b>Architecture:</b> Majestic monuments like the Taj Mahal and Red Fort.</li>
-                <li class="list-group-item text-muted"><b>Cuisine:</b> Diverse Flavors from spicy curries to sweet desserts.</li>
-                <li class="list-group-item text-muted"><b>Culture:</b> Vibrant festivals, classical dances, and colorful attire.</li>
+        <section>
+            <h2>Highlights of India Include</h2>
+            <ul>
+                <li><b>Architecture:</b> Majestic monuments like the Taj Mahal and Red Fort.</li>
+                <li><b>Cuisine:</b> Diverse Flavors from spicy curries to sweet desserts.</li>
+                <li><b>Culture:</b> Vibrant festivals, classical dances, and colorful attire.</li>
             </ul>
         </section>
-
+        
         <!-- Famous Landmarks Section -->
-        <section class="mb-5">
-            <h2 class="display-5 text-dark">Famous Landmarks</h2>
-            <p class="fs-5 text-muted">India is home to <mark>29 UNESCO World Heritage Sites</mark>, making it a paradise for history and architecture enthusiasts.</p>
+        <section>
+            <h2>Famous Landmarks</h2>
+            <p>India is home to <mark>29 UNESCO World Heritage Sites</mark>, making it a paradise for history and architecture enthusiasts.</p>
             <article>
-                <figure class="text-center">
-                    <img src="https://www.travelandleisure.com/thmb/wdUcyBQyQ0wUVs4wLahp0iWgZhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taj-mahal-agra-india-TAJ0217-9eab8f20d11d4391901867ed1ce222b8.jpg" title="TAJ MAHAL" alt="Taj Mahal" class="img-fluid">
+                <figure>
+                    <img src="https://www.travelandleisure.com/thmb/wdUcyBQyQ0wUVs4wLahp0iWgZhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taj-mahal-agra-india-TAJ0217-9eab8f20d11d4391901867ed1ce222b8.jpg" title="TAJ MAHAL" alt="Taj Mahal" width="300" height="200">
                     <figcaption>The Taj Mahal, a symbol of eternal love</figcaption>
                 </figure>
             </article>
             <article>
-                <figure class="text-center">
-                    <img src="https://media.gettyimages.com/id/165204592/photo/qutub-minar-delhi-india.jpg?s=612x612&w=gi&k=20&c=KxOGKa9Bs547e3lu_EbkNxxBppY3IW95uVvCAKZj5fE=" title="QUTUB MINAR" alt="Qutub Minar" class="img-fluid">
+                <figure>
+                    <img src="https://media.gettyimages.com/id/165204592/photo/qutub-minar-delhi-india.jpg?s=612x612&w=gi&k=20&c=KxOGKa9Bs547e3lu_EbkNxxBppY3IW95uVvCAKZj5fE=" title="QUTUB MINAR" alt="Qutub Minar" width="300" height="200">
                     <figcaption>The Qutub Minar, an architectural marvel in Delhi.</figcaption>
                 </figure>
             </article>
-            <p class="text-center fst-italic fs-5 text-muted">Don't miss exploring the intricate carvings, towering minarets, and breathtaking landscapes!</p>
+            <p><i>Don't miss exploring the intricate carvings, towering minarets, and breathtaking landscapes!</i></p>
         </section>
-
+        
         <!-- Indian Culture Section -->
-        <section class="mb-5">
-            <h2 class="display-5 text-dark">Indian Culture</h2>
-            <p class="fs-5 text-muted">India's <b>cultural heritage</b> is a blend of various traditions, languages, and religions. Each region has its own unique identity and traditions that are celebrated through festivals and daily life. Here are some highlights:</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-muted"><i>Classical Dances:</i> Bharatanatyam, Kathak, and Odissi.</li>
-                <li class="list-group-item text-muted"><i>Music:</i> Traditional instruments like the sitar, tabla, and veena.</li>
-                <li class="list-group-item text-muted"><i>Festivals:</i> Diwali, Holi, Eid, and Christmas bring people together in celebration.</li>
+        <section>
+            <h2>Indian Culture</h2>
+            <p>India's <b>cultural heritage</b> is a blend of various traditions, languages, and religions. Each region has its own unique identity and traditions that are celebrated through festivals and daily life. Here are some highlights:</p>
+            <ul>
+                <li><i>Classical Dances:</i> Bharatanatyam, Kathak, and Odissi.</li>
+                <li><i>Music:</i> Traditional instruments like the sitar, tabla, and veena.</li>
+                <li><i>Festivals:</i> Diwali, Holi, Eid, and Christmas bring people together in celebration.</li>
             </ul>
-            <figure class="text-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Chhau_dance.jpg" title="CLASSICAL DANCE" alt="Indian Classical Dance" class="img-fluid">
+            <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Chhau_dance.jpg" title="CLASSICAL DANCE" alt="Indian Classical Dance" width="300" height="200">
                 <figcaption>A glimpse of Indian Classical Dance</figcaption>
             </figure>
         </section>
-
+        
         <!-- Delicious Indian Cuisine Section -->
-        <section class="mb-5">
-            <h2 class="display-5 text-dark">Delicious Indian Cuisine</h2>
-            <p class="fs-5 text-muted">Indian food is as diverse as its culture. From the fiery curries of the south to the hearty bread of the north, there's something for everyone. Popular dishes include:</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-muted"><b>North Indian:</b> Butter chicken, naan, and paneer tikka.</li>
-                <li class="list-group-item text-muted"><b>South Indian:</b> Dosa, idli, and Sambhar.</li>
-                <li class="list-group-item text-muted"><b>Street Food:</b> Pani Puri, Chat, and Vada Pav.</li>
+        <section>
+            <h2>Delicious Indian Cuisine</h2>
+            <p>Indian food is as diverse as its culture. From the fiery curries of the south to the hearty bread of the north, there's something for everyone. Popular dishes include:</p>
+            <ul>
+                <li><b>North Indian:</b> Butter chicken, naan, and paneer tikka.</li>
+                <li><b>South Indian:</b> Dosa, idli, and Sambhar.</li>
+                <li><b>Street Food:</b> Pani Puri, Chat, and Vada Pav.</li>
             </ul>
-            <figure class="text-center">
-                <img src="https://5.imimg.com/data5/ANDROID/Default/2021/6/HX/AM/DW/38411130/product-jpeg.jpeg" title="BIRYANI" alt="Hyderabad Biryani" class="img-fluid">
+            <figure>
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2021/6/HX/AM/DW/38411130/product-jpeg.jpeg" title="BIRYANI" alt="Hyderabad Biryani" width="300" height="200">
                 <figcaption>Delicious Hyderabad Biryani</figcaption>
             </figure>
-            <figure class="text-center">
-                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQi0WnsQwT27Us60W_DnHnQIuEIMEwtjmGtdIz85NrwgKY3d7lm" title="STREET FOOD" alt="Indian Street Food" class="img-fluid">
+            <figure>
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQi0WnsQwT27Us60W_DnHnQIuEIMEwtjmGtdIz85NrwgKY3d7lm" title="STREET FOOD" alt="Indian Street Food" width="300" height="200">
                 <figcaption>Colorful and Flavorful Indian Street Food</figcaption>
             </figure>
         </section>
     </main>
-
+    
     <!-- Footer Section -->
-    <footer class="text-white text-center py-4">
-        <div class="container">
-            <address class="mb-3">
-                Contact us at <a href="mailto:info@incredibleindia.com" target="_blank" class="text-warning">info@incredibleindia.com</a>
-            </address>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWkV_d8riafUBKFjuqyrlUXp8vacEJ2w-Ag&s" title="Copyright" alt="Copyright" class="align-middle me-2" width="30" height="20">
-            <p class="mb-2">2025 Incredible India Project. All Rights Reserved.</p>
-            <p>Follow Us On: <a href="" target="_blank" class="text-warning">Facebook</a> | <a href="" target="_blank" class="text-warning">Twitter</a></p>
-        </div>
+    <footer>
+        <address>
+            Contact us at <a href="mailto:info@incredibleindia.com" target="_blank">info@incredibleindia.com</a>
+        </address>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWkV_d8riafUBKFjuqyrlUXp8vacEJ2w-Ag&s"
+        title="Copyright" alt="Copyright" align="left" width="30" height="20">
+        <p>2025 Incredible India Project. All Rights Reserved.</p>
+        <p>Follow Us On: <a href="" target="_blank">Facebook</a> | <a href="" target="_blank">Twitter</a></p>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
