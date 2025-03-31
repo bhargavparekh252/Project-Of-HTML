@@ -5,87 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Incredible India</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<style>
-    body {
-           font-family: 'Poppins', sans-serif;
-           background-color: #f4f4f4;
-           margin: 0;
-           padding: 0;
-           overflow-x: hidden;
-    }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-    /* Navigation Bar */
-    .Navigation {
+        /* Navigation Bar */
+        .Navigation {
             background-color: #333;
             overflow: hidden;
-    }
+        }
 
-    .Navigation nav {
+        .Navigation nav {
             display: flex;
             justify-content: center;
             padding: 10px 0;
-    }
+        }
 
-    .Navigation nav li {
-            list-style-type: none;
+        .Navigation .navbar-nav .nav-item {
             margin: 0 15px;
-            display: inline-block;
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeInNav 1s ease-in-out forwards;
-    }
+        }
 
-    @keyframes fadeInNav {
+        @keyframes fadeInNav {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
-    }
+        }
 
-    .Navigation nav li a {
+        .Navigation .navbar-nav .nav-link {
             text-decoration: none;
             color: white;
             font-size: 1.2rem;
             padding: 10px 15px;
             transition: all 0.3s ease-in-out;
             display: inline-block;
-    }
+        }
 
-    .Navigation nav li a:hover {
+        .Navigation .navbar-nav .nav-link:hover {
             background-color: #f0a500;
             border-radius: 5px;
             transform: scale(1.1);
-    }
+        }
 
-    main {
-        padding: 20px;
-    }
+        main {
+            padding: 20px;
+        }
 
-    h2 {
-        font-size: 2rem;
-        color: #333;
-    }
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
 
-    h3 {
-        font-size: 1.5rem;
-        color: #444;
-    }
+        h3 {
+            font-size: 1.5rem;
+            color: #444;
+        }
 
-    p, ul{
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #555;
-    }
+        p, ul {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
 
-    section {
-        margin-bottom: 30px;
-        opacity: 0;
-        transform: translateY(50px);
-        animation: slideIn 1s ease-in-out forwards;
-    }
+        section {
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideIn 1s ease-in-out forwards;
+        }
 
-    @keyframes slideIn {
+        @keyframes slideIn {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -109,72 +108,69 @@
             50% { border-color: transparent; }
         }
 
+        ul {
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
 
-    ul {
-        padding-left: 20px;
-        font-size: 1.1rem;
-    }
+        ul li {
+            margin: 5px 0;
+        }
 
-    ul li {
-        margin: 5px 0;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-in-out forwards;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        opacity: 0;
-        transform: scale(0.8);
-        animation: fadeInScale 1s ease-in-out forwards;
-    }
-
-    @keyframes fadeInScale {
+        @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
 
-    table, th, td {
-        border: 1px solid #ddd;
-        text-align: center;
-        padding: 10px;
-    }
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #f0a500;
-        color: white;
-    }
+        th {
+            background-color: #f0a500;
+            color: white;
+        }
 
-    details {
-        margin-top: 20px;
-        font-size: 1.1rem;
-    }
+        details {
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
 
-    figure {
-        /* margin: 20px 0; */
-        text-align: center;
-        /* overflow: hidden; Prevents overflow of enlarged image */
-    }
+        figure {
+            text-align: center;
+        }
 
-    figure img {
-        max-width: 100%;
+        figure img {
+            max-width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+        }
 
-    /* Hover Effect on Images */
-    figure img:hover {
-        transform: scale(1.1); /* Increases image size by 10% */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+        /* Hover Effect on Images */
+        figure img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    figcaption {
-        font-style: italic;
-        color: #777;
-    }
+        figcaption {
+            font-style: italic;
+            color: #777;
+        }
 
-    footer {
-        background-color: #333;
+        footer {
+            background-color: #333;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -184,106 +180,125 @@
             opacity: 0;
             transform: translateY(30px);
             animation: slideUp 1s ease-in-out forwards;
-    }
+        }
 
-    @keyframes slideUp {
+        @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-    footer a {
-        color: #f0a500;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* Media Queries for Responsive Design */
-    @media (max-width: 768px) {
-        /* For screens smaller than 768px */
-        .Navigation nav {
-            flex-direction: column;
-            padding: 20px 0;
+        footer a {
+            color: #f0a500;
+            text-decoration: none;
         }
 
-        .Navigation nav li {
-            margin: 10px 0;
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        .Navigation nav li a {
-            font-size: 1rem;
-            padding: 12px;
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            /* For screens smaller than 768px */
+            .Navigation .navbar-nav {
+                padding: 20px 0;
+            }
+
+            .Navigation .nav-item {
+                margin: 10px 0;
+            }
+
+            .Navigation .nav-link {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            figure img {
+                width: 80%;
+                height: auto;
+            }
+
+            footer {
+                padding: 15px 0;
+            }
         }
 
-        h2 {
-            font-size: 1.8rem;
-        }
+        @media (max-width: 480px) {
+            /* For screens smaller than 480px (e.g., mobile phones) */
+            .Navigation .nav-link {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
 
-        h3 {
-            font-size: 1.3rem;
-        }
+            h2 {
+                font-size: 1.6rem;
+            }
 
-        table, th, td {
-            font-size: 0.9rem;
-            padding: 8px;
-        }
+            h3 {
+                font-size: 1.2rem;
+            }
 
-        figure img {
-            width: 80%; /* Ensure images do not stretch */
-            height: auto;
-        }
+            table, th, td {
+                font-size: 0.8rem;
+                padding: 6px;
+            }
 
-        footer {
-            padding: 15px 0;
-        }
-    }
+            figure img {
+                width: 100%;
+            }
 
-    @media (max-width: 480px) {
-        /* For screens smaller than 480px (e.g., mobile phones) */
-        .Navigation nav li a {
-            font-size: 0.9rem;
-            padding: 8px 12px;
+            footer {
+                padding: 10px 0;
+            }
         }
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-        }
-
-        table, th, td {
-            font-size: 0.8rem;
-            padding: 6px;
-        }
-
-        figure img {
-            width: 100%; /* Make images scale properly */
-        }
-
-        footer {
-            padding: 10px 0;
-        }
-    }
-</style>
+    </style>
+</head>
 
 <body>
-    <!-- Navigation menu -->
+    <!-- Navigation menu with Bootstrap Navbar -->
     <div class="Navigation">
-        <nav>
-            <li><a href="./homepage.html" target="_self">Home</a></li>
-            <li><a href="./culturepage.html" target="_self"><i>Culture</i></a></li>
-            <li><a href="./landmarks.html" target="_self">Landmarks</a></li>
-            <li><a href="./cuisine.html" target="_self">Cuisine</a></li>
-            <li><a href="./contactus.html" target="_self">Contact Us</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid justify-content-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./homepage.html" target="_self">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./culturepage.html" target="_self"><i>Culture</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./landmarks.html" target="_self">Landmarks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./cuisine.html" target="_self">Cuisine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contactus.html" target="_self">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
 
-    <!-- Main content area -->
-    <main>
+    <!-- Main content area with Bootstrap Container -->
+    <main class="container">
         <!-- Section for Indian culture -->
         <section>
             <h2>Indian Culture</h2>
@@ -293,7 +308,7 @@
             <article>
                 <h3>Festivals</h3>
                 <p>India celebrates a variety of festivals that reflect its rich cultural heritage and religious diversity:</p>
-                <ul>
+                <ul class="list-unstyled">
                     <li><b>Diwali:</b> Festivals of Lights, symbolizing the victory of light over darkness.</li>
                     <li><b>Holi:</b> Festivals of Colours, celebrating love and the arrival of spring.</li>
                     <li><b>Eid:</b> Festival of Harmony, marked by prayers, feasts and charity.</li>
@@ -308,7 +323,7 @@
             <!-- Section for languages -->
             <h2>Languages</h2>
             <p>India is a linguistic treasure trove with 22 officially recognized languages and thousands of regional dialects:</p>
-            <table border="1px" cellspacing="0">
+            <table border="1px" cellspacing="0" class="table">
                 <thead>
                     <tr>
                         <th>Language</th>
@@ -345,7 +360,7 @@
             <section>
                 <h2>Traditional Attire</h2>
                 <p>Indian traditional clothing varies by region, showcasing its cultural diversity:</p>
-                <ul>
+                <ul class="list-unstyled">
                     <li><b>Saree:</b> Elegant drape worn by women across India.</li>
                     <li><b>Kurta-Pajama:</b> Comfortable attire for men, popular in the north.</li>
                     <li><b>Lehenga:</b> A festive outfit for women, especially in weddings.</li>
@@ -361,12 +376,14 @@
 
     <!-- Footer with contact information -->
     <footer class="footer">
-        <p style="text-align: center;"> &copy;2025 Incredible India Project. All Rights Reserved.</p>
+        <p style="text-align: center;"> ©2025 Incredible India Project. All Rights Reserved.</p>
         <address style="text-align: center;">
             Contact us at:- <a href="mailto:info@incredibleindia.com" target="_blank">info@incredibleindia.com</a>
         </address>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
