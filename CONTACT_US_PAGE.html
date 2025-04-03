@@ -6,369 +6,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to favicon -->
-    <link rel="icon" type="image/x-icon"
-        href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
+    <link rel="icon" type="image/x-icon" href="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Incredible_India_jpg_857f450f2a.jpg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Title of the webpage -->
     <title>Incredible India</title>
 </head>
-<style>
-    /* Basic reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        line-height: 1.6;
-    }
-
-    header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    nav {
-        background-color: #333;
-        padding: 10px 0;
-        text-align: center;
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-    nav ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin: 0 20px;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        padding: 10px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    nav ul li a:hover {
-        background-color: #f0a500;
-        border-radius: 5px;
-        transform: scale(1.1);
-    }
-
-    main {
-        padding: 20px;
-        background-color: white;
-        margin-top: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-    section {
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    form {
-        margin-top: 20px;
-    }
-
-    table {
-        width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
-    }
-
-    table td {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="file"],
-    input[type="date"],
-    input[type="time"],
-    input[type="number"],
-    textarea,
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    input[type="submit"],
-    input[type="reset"] {
-        width: 48%;
-        padding: 10px;
-        margin-top: 20px;
-        border: none;
-        background-color: #333;
-        color: white;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-
-    input[type="submit"]:hover,
-    input[type="reset"]:hover {
-        background-color: #f0a500;
-        transform: scale(1.05);
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    img:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    iframe {
-        border: none;
-        margin-top: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    iframe:hover {
-        transform: scale(1.02);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    footer {
-        background-color: #333;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
-    footer img {
-        margin-right: 10px;
-    }
-
-    footer a {
-        color: #f0a500;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Media Queries for responsiveness */
-    @media (max-width: 1200px) {
-        header h1 {
-            font-size: 2rem;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-
-        form table td {
-            font-size: 0.9rem;
-        }
-
-        iframe {
-            width: 100%;
-            height: 300px;
-        }
-
-        footer {
-            font-size: 0.9rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        nav ul {
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        p {
-            font-size: 0.9rem;
-        }
-
-        form table td {
-            font-size: 0.9rem;
-        }
-
-        iframe {
-            width: 100%;
-            height: 350px;
-        }
-
-        footer {
-            font-size: 0.8rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav ul li {
-            margin: 5px 0;
-        }
-
-        header h1 {
-            font-size: 1.6rem;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-        }
-
-        p {
-            font-size: 0.8rem;
-        }
-
-        form table td {
-            font-size: 0.8rem;
-        }
-
-        iframe {
-            width: 100%;
-            height: 250px;
-        }
-
-        footer {
-            font-size: 0.7rem;
-            padding: 15px 0;
-        }
-
-        input[type="submit"],
-        input[type="reset"] {
-            width: 100%;
-            margin-top: 10px;
-        }
-    }
-</style>
 <body>
-
     <!-- Header section -->
-    <header>
-        <h1>Welcome to Incredible India</h1>
+    <header class="bg-dark text-white text-center py-4">
+        <h1 class="display-4">Welcome to Incredible India</h1>
     </header>
 
-    <!-- Navigation menu -->
-    <nav>
-        <ul>
-            <li><a href="./homepage.html" target="_self">Home</a></li>
-            <li><a href="./culturepage.html" target="_self"><i>Culture</i></a></li>
-            <li><a href="./landmarks.html" target="_self">Landmarks</a></li>
-            <li><a href="./cuisine.html" target="_self">Cuisine</a></li>
-            <li><a href="./contactus.html" target="_self">Contact Us</a></li>
-        </ul>
+    <!-- Navigation menu with Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./homepage.html" target="_self">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./culturepage.html" target="_self"><i>Culture</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./landmarks.html" target="_self">Landmarks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./cuisine.html" target="_self">Cuisine</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="./contactus.html" target="_self">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main content area -->
-    <main>
+    <!-- Main content area with Bootstrap Container -->
+    <main class="container my-4 bg-white rounded shadow p-4">
         <!-- Section for contact form -->
-        <section>
-            <h2>Contact Us</h2>
+        <section class="mb-5">
+            <h2 class="display-5 mb-3">Contact Us</h2>
             <p>Please fill out the form below for any inquiries or to register as a student.</p>
 
             <form>
-                <h2>Student Registartion Form</h2>
-                <table>
+                <h2 class="display-6 mb-3">Student Registration Form</h2>
+                <table class="table table-borderless">
                     <!-- First Name input -->
                     <tr>
-                        <td><label for="FIRST_NAME">First Name:</label></td>
-                        <td><input type="text" id="FIRST_NAME" name="first_name" placeholder="Your Name Here"></td>
+                        <td><label for="FIRST_NAME" class="form-label">First Name:</label></td>
+                        <td><input type="text" id="FIRST_NAME" name="first_name" class="form-control" placeholder="Your Name Here"></td>
                     </tr>
                     <!-- Password input -->
                     <tr>
-                        <td><label for="PASSWORD">Password:</label></td>
-                        <td><input type="password" id="PASSWORD" name="password" required
-                                placeholder="Your Password Here"></td>
+                        <td><label for="PASSWORD" class="form-label">Password:</label></td>
+                        <td><input type="password" id="PASSWORD" name="password" class="form-control" required placeholder="Your Password Here"></td>
                     </tr>
                     <!-- Gender selection -->
                     <tr>
-                        <td><label for="GENDER">Gender:</label></td>
+                        <td><label class="form-label">Gender:</label></td>
                         <td>
-                            <input type="radio" name="gender" value="male"> Male
-                            <input type="radio" name="gender" value="female"> Female
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="gender" value="male" class="form-check-input" id="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="gender" value="female" class="form-check-input" id="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
                         </td>
                     </tr>
                     <!-- Newsletter subscription -->
                     <tr>
                         <td colspan="2">
-                            <label>Subscribe To Newsletter:<input type="checkbox" name="subscribe_newsletter"></label>
+                            <div class="form-check">
+                                <input type="checkbox" name="subscribe_newsletter" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">Subscribe To Newsletter</label>
+                            </div>
                         </td>
                     </tr>
                     <!-- State selection -->
                     <tr>
-                        <td><label for="STATE">State:</label></td>
+                        <td><label for="STATE" class="form-label">State:</label></td>
                         <td>
-                            <select id="STATE" name="state">
+                            <select id="STATE" name="state" class="form-select">
                                 <option value="">Please Select Your State</option>
                                 <option value="Gujarat">Gujarat</option>
                                 <option value="Tamil Nadu">Tamil Nadu</option>
@@ -389,54 +115,57 @@
                     </tr>
                     <!-- Resume upload -->
                     <tr>
-                        <td><label for="UPLOAD_RESUME">Upload Resume:</label></td>
-                        <td><input type="file" id="UPLOAD_RESUME" name="upload_resume"></td>
+                        <td><label for="UPLOAD_RESUME" class="form-label">Upload Resume:</label></td>
+                        <td><input type="file" id="UPLOAD_RESUME" name="upload_resume" class="form-control"></td>
                     </tr>
                     <!-- Address input -->
                     <tr>
-                        <td><label for="ADDRESS">Address:</label></td>
-                        <td><textarea id="ADDRESS" name="address" rows="4"
-                                placeholder="Enter Full Address Here"></textarea></td>
+                        <td><label for="ADDRESS" class="form-label">Address:</label></td>
+                        <td><textarea id="ADDRESS" name="address" rows="4" class="form-control" placeholder="Enter Full Address Here"></textarea></td>
                     </tr>
                     <!-- Date of Birth input -->
                     <tr>
-                        <td><label for="DOB">Date Of Birth:</label></td>
-                        <td><input type="date" id="DOB" name="dob"></td>
+                        <td><label for="DOB" class="form-label">Date Of Birth:</label></td>
+                        <td><input type="date" id="DOB" name="dob" class="form-control"></td>
                     </tr>
                     <!-- Preferred Interview Time input -->
                     <tr>
-                        <td><label for="TIME">Preferred Interview Time:</label></td>
-                        <td><input type="time" id="TIME" name="interview_time"></td>
+                        <td><label for="TIME" class="form-label">Preferred Interview Time:</label></td>
+                        <td><input type="time" id="TIME" name="interview_time" class="form-control"></td>
                     </tr>
                     <!-- Marks input -->
                     <tr>
-                        <td><label for="MARKS">Marks:</label></td>
-                        <td><input type="number" id="MARKS" name="marks"></td>
+                        <td><label for="MARKS" class="form-label">Marks:</label></td>
+                        <td><input type="number" id="MARKS" name="marks" class="form-control"></td>
                     </tr>
                     <!-- Form actions -->
                     <tr>
-                        <td><input type="submit"></td>
-                        <td><input type="reset"></td>
+                        <td><input type="submit" class="btn btn-dark w-100" value="Submit"></td>
+                        <td><input type="reset" class="btn btn-dark w-100" value="Reset"></td>
                     </tr>
                 </table>
             </form>
         </section>
 
         <!-- Additional information section -->
-        <aside>
-            <h2>More Information</h2>
+        <aside class="mb-5">
+            <h2 class="display-5 mb-3">More Information</h2>
             <p>Explore government job opportunities on the official OJAS website:</p>
-            <iframe src="https://ojas.gujarat.gov.in/" width="400" height="400"></iframe>
-            <p>Contact us at <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
+            <iframe src="https://ojas.gujarat.gov.in/" class="w-100 rounded shadow" height="400"></iframe>
+            <p class="mt-3">Contact us at <a href="mailto:info@incredibleindia.com" class="text-dark">info@incredibleindia.com</a></p>
         </aside>
     </main>
 
     <!-- Footer section -->
-    <footer>
-        <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWkV_d8riafUBKFjuqyrlUXp8vacEJ2w-Ag&s"
-                alt="Copyright" align="left" width="30" height="20"> 2025 Incredible India Project.</p>
+    <footer class="bg-dark text-white text-center py-4">
+        <p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWkV_d8riafUBKFjuqyrlUXp8vacEJ2w-Ag&s" alt="Copyright" class="me-2" width="30" height="20">
+            2025 Incredible India Project.
+        </p>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
